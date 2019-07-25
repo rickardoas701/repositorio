@@ -44,30 +44,30 @@ def leds(path):
 	if cmd=='/led1':
 		if val=='ON':
 			gpio.output(3,True)
-			print 'enciende led1'
+			print ('enciende led1')
 		if val=='OFF':
 			gpio.output(3,False)
-			print 'apaga led1'
+			print ('apaga led1')
 	if cmd=='/led2':
 		if val=='ON':
 			gpio.output(5,True)
-			print 'enciende led2'
+			print ('enciende led2')
 		if val=='OFF':
 			gpio.output(5,False)
-			print 'apaga led2'                
+			print ('apaga led2')                
 	if cmd=='/led3':
 		if val=='ON':
-			print 'enciende led3'
+			print ('enciende led3')
 			gpio.output(7,True)
 		if val=='OFF':
-			print 'apaga led4'
+			print ('apaga led4')
 			gpio.output(7,False)
 	if cmd=='/led4':
 		if val=='ON':
-			print 'enciende led4'
+			print ('enciende led4')
 			gpio.output(11,True)
 		if val=='OFF':
-			print 'apaga led4'  
+			print ('apaga led4')  
 			gpio.output(11,False)  
 
 
