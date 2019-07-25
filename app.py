@@ -1,14 +1,5 @@
 #!/usr/bin/python
-import RPi.GPIO as gpio
-gpio.setmode(gpio.BOARD)
-gpio.setup(3, gpio.OUT)
-gpio.output(3, False)
-gpio.setup(5, gpio.OUT)
-gpio.output(5, False)
-gpio.setup(7, gpio.OUT)
-gpio.output(7, False)
-gpio.setup(11, gpio.OUT)
-gpio.output(11, False)
+
 try:
 	from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
 except:
@@ -23,60 +14,6 @@ except:
 import os
 port = int(os.environ.get("PORT", 5000))	
 PORT_NUMBER = port
-
-
-
-
-es=0
-def leds(path):
-	global es
-	try:
-		cmd,val=path.split('_')
-		
-	except:
-		cmd=''
-	#if cmd=='/led1':
-	#	if es==0:
-	#		print 'enciende led1'
-	#		gpio.output(3,True)
-	#		es=1
-	#	else:
-	#		gpio.output(3,False)
-	#		print 'apaga led1'
-	#		es=0
-    if cmd=='/led1':
-		if val=='ON':
-			gpio.output(3,True)
-			print 'enciende led1'
-		if val=='OFF':
-			gpio.output(3,False)
-			print 'apaga led1'
-	if cmd=='/led2':
-		if val=='ON':
-			gpio.output(5,True)
-			print 'enciende led2'
-		if val=='OFF':
-			gpio.output(5,False)
-			print 'apaga led2'                
-	if cmd=='/led3':
-		if val=='ON':
-			print 'enciende led3'
-			gpio.output(7,True)
-		if val=='OFF':
-			print 'apaga led4'
-			gpio.output(7,False)
-	if cmd=='/led4':
-		if val=='ON':
-			print 'enciende led4'
-			gpio.output(11,True)
-		if val=='OFF':
-			print 'apaga led4'  
-			gpio.output(11,False)  
-
-
-
-
-
 
 
 
