@@ -1,5 +1,14 @@
 #!/usr/bin/python
-
+import RPi.GPIO as gpio
+gpio.setmode(gpio.BOARD)
+gpio.setup(3, gpio.OUT)
+gpio.output(3, False)
+gpio.setup(5, gpio.OUT)
+gpio.output(5, False)
+gpio.setup(7, gpio.OUT)
+gpio.output(7, False)
+gpio.setup(11, gpio.OUT)
+gpio.output(11, False)
 try:
 	from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
 except:
@@ -32,7 +41,7 @@ def leds(path):
 	#		gpio.output(3,False)
 	#		print 'apaga led1'
 	#		es=0
-    if cmd=='/led1':
+	if cmd=='/led1':
 		if val=='ON':
 			gpio.output(3,True)
 			print 'enciende led1'
